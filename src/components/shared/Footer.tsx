@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Phone, Mail, MapPin, ExternalLink, Heart, Compass, Share2, MessageSquare, Play } from 'lucide-react'
 
 const quickLinks = [
@@ -38,8 +39,14 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1 space-y-6">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white font-black text-xl shadow-lg">
-                G
+              <div className="relative w-12 h-12 rounded-2xl overflow-hidden shadow-lg border border-white/10 group-hover:scale-105 transition-transform duration-500">
+                <Image 
+                  src="/images/logo_v4.png" 
+                  alt="Gezi Vitrinim Logo" 
+                  fill 
+                  sizes="48px"
+                  className="object-cover"
+                />
               </div>
               <div>
                 <p className="text-xl font-black tracking-tight leading-none text-white">
@@ -104,13 +111,13 @@ export default function Footer() {
             <h5 className="font-black text-white mb-6">İletişim</h5>
             <ul className="space-y-4">
               <li>
-                <a href="tel:+905000000000" className="flex items-start gap-3 text-slate-400 hover:text-white transition-colors group">
+                <a href="tel:+905322669039" className="flex items-start gap-3 text-slate-400 hover:text-white transition-colors group">
                   <div className="w-9 h-9 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-500/20 transition-colors">
                     <Phone className="w-4 h-4 text-blue-400" />
                   </div>
                   <div>
-                    <p className="text-[10px] text-slate-500 uppercase tracking-wider font-bold">Telefon</p>
-                    <p className="text-sm font-bold text-white">+90 (500) 000 00 00</p>
+                    <p className="text-[10px] text-slate-500 uppercase tracking-wider font-bold">Battal Özdemir</p>
+                    <p className="text-sm font-bold text-white">+90 (532) 266 90 39</p>
                   </div>
                 </a>
               </li>
@@ -140,7 +147,7 @@ export default function Footer() {
 
             {/* WhatsApp CTA */}
             <a
-              href="https://wa.me/905000000000?text=Merhaba, tur hakkında bilgi almak istiyorum."
+              href="https://wa.me/905397106544?text=Merhaba, tur hakkında bilgi almak istiyorum."
               target="_blank"
               rel="noopener noreferrer"
               className="btn-whatsapp mt-6 w-full justify-center text-sm py-3 rounded-xl"
@@ -160,8 +167,11 @@ export default function Footer() {
             ile yapıldı.
           </p>
           <div className="flex items-center gap-6">
-            <span className="text-slate-500 text-xs font-bold uppercase tracking-wider">TÜRSAB Üyesi</span>
-            <div className="w-px h-4 bg-white/10" />
+            <div className="flex flex-col items-end">
+              <span className="text-white text-[10px] font-black uppercase tracking-widest">TÜRSAB Belge No</span>
+              <span className="text-blue-400 text-sm font-black">6882</span>
+            </div>
+            <div className="w-px h-8 bg-white/10" />
             <span className="text-slate-500 text-xs font-bold uppercase tracking-wider">ISO 9001</span>
           </div>
         </div>

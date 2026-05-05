@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone, MapPin, Compass, Globe, Home, Info } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -59,9 +60,14 @@ export default function Navbar() {
         >
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group flex-shrink-0">
-            <div className="relative w-11 h-11 rounded-xl overflow-hidden shadow-lg">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800 group-hover:from-blue-500 group-hover:to-purple-700 transition-all duration-500" />
-              <span className="absolute inset-0 flex items-center justify-center text-white font-black text-xl">G</span>
+            <div className="relative w-12 h-12 rounded-2xl overflow-hidden shadow-lg border border-white/20 group-hover:scale-105 transition-transform duration-500">
+              <Image 
+                src="/images/logo_v4.png" 
+                alt="Gezi Vitrinim Logo" 
+                fill 
+                sizes="48px"
+                className="object-cover"
+              />
             </div>
             <div className="flex flex-col -space-y-0.5">
               <span className={cn(
@@ -100,7 +106,7 @@ export default function Navbar() {
           {/* CTA + Hamburger */}
           <div className="flex items-center gap-3">
             <a
-              href="tel:+905000000000"
+              href="tel:+905322669039"
               className={cn(
                 'hidden md:flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold transition-all duration-300',
                 scrolled
@@ -196,7 +202,7 @@ export default function Navbar() {
               {/* Drawer Footer */}
               <div className="p-6 space-y-3 border-t bg-slate-50">
                 <a
-                  href="https://wa.me/905000000000?text=Merhaba, tur hakkında bilgi almak istiyorum."
+                  href="https://wa.me/905397106544?text=Merhaba, tur hakkında bilgi almak istiyorum."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-bold text-white text-sm btn-whatsapp"
@@ -205,7 +211,7 @@ export default function Navbar() {
                   WhatsApp'tan Yaz
                 </a>
                 <a
-                  href="tel:+905000000000"
+                  href="tel:+905322669039"
                   className="flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-bold text-blue-700 text-sm bg-blue-50 hover:bg-blue-100 transition-colors"
                 >
                   <Phone className="w-4 h-4" />

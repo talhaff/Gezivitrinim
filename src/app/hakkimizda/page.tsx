@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Metadata } from 'next'
 import Navbar from '@/components/shared/Navbar'
 import Footer from '@/components/shared/Footer'
@@ -17,9 +18,9 @@ const milestones = [
 ]
 
 const team = [
-  { name: 'Ahmet Yılmaz',  role: 'Kurucu & Genel Müdür',   initials: 'AY', color: 'from-blue-500 to-blue-700' },
-  { name: 'Fatma Kaya',    role: 'Tur Koordinatörü',        initials: 'FK', color: 'from-purple-500 to-violet-700' },
-  { name: 'Mehmet Demir',  role: 'Satış & Müşteri İlişk.', initials: 'MD', color: 'from-emerald-500 to-green-700' },
+  { name: 'Battal Özdemir', role: 'Kurucu & Genel Müdür', initials: 'BÖ', color: 'from-blue-600 to-blue-800' },
+  { name: 'Taha Özdemir',   role: 'Tur Koordinatörü', initials: 'TÖ', color: 'from-purple-600 to-violet-800' },
+  { name: 'Gezi Vitrinim',  role: 'Satış Ekibi', initials: 'GV', color: 'from-emerald-500 to-green-700' },
 ]
 
 const values = [
@@ -35,11 +36,29 @@ export default function AboutPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="gradient-hero pt-36 pb-24 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px]" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-600/10 rounded-full blur-[80px]" />
+      <section className="relative pt-40 pb-28 overflow-hidden bg-[#0F172A]">
+        {/* Animated Background Image */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <div className="w-full h-full relative animate-zoom-bg">
+            <Image
+              src="/images/pages/about_bg.png"
+              alt="Hakkımızda Arka Plan"
+              fill
+              className="object-cover object-center"
+              priority
+              quality={90}
+            />
+          </div>
+          {/* Gradients */}
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-900" />
         </div>
+
+        {/* Ambient Orbs */}
+        <div className="absolute inset-0 pointer-events-none z-0 mix-blend-screen opacity-60">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px]" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-600/20 rounded-full blur-[80px]" />
+        </div>
+
         <div className="container mx-auto px-6 max-w-4xl relative z-10 text-center">
           <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-8">
             <MapPin className="w-4 h-4 text-amber-400" />

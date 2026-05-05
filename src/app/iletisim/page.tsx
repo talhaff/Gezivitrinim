@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Metadata } from 'next'
 import Navbar from '@/components/shared/Navbar'
 import Footer from '@/components/shared/Footer'
@@ -12,39 +13,39 @@ export const metadata: Metadata = {
 const contactMethods = [
   {
     icon: Phone,
-    title: 'Telefon',
-    value: '+90 (500) 000 00 00',
-    href: 'tel:+905000000000',
+    title: 'Battal Özdemir',
+    value: '+90 (532) 266 90 39',
+    href: 'tel:+905322669039',
     color: 'blue',
-    gradient: 'from-blue-500 to-blue-700',
-    desc: 'Hafta içi 09:00 - 18:00'
+    gradient: 'from-blue-600 to-blue-800',
+    desc: 'Kurucu & Genel Müdür'
+  },
+  {
+    icon: Phone,
+    title: 'Taha Özdemir',
+    value: '+90 (539) 710 65 44',
+    href: 'tel:+905397106544',
+    color: 'purple',
+    gradient: 'from-purple-600 to-violet-800',
+    desc: 'Tur Koordinatörü'
   },
   {
     icon: MessageCircle,
-    title: 'WhatsApp',
-    value: '+90 (500) 000 00 00',
-    href: 'https://wa.me/905000000000?text=Merhaba, tur hakkında bilgi almak istiyorum.',
+    title: 'WhatsApp Destek',
+    value: '7/24 Mesaj Gönderin',
+    href: 'https://wa.me/905397106544?text=Merhaba, tur hakkında bilgi almak istiyorum.',
     color: 'green',
     gradient: 'from-green-500 to-emerald-600',
-    desc: 'Hızlı yanıt garantisi'
-  },
-  {
-    icon: Mail,
-    title: 'E-posta',
-    value: 'info@gezivitrinim.com',
-    href: 'mailto:info@gezivitrinim.com',
-    color: 'purple',
-    gradient: 'from-purple-500 to-violet-600',
-    desc: '24 saat içinde dönüş'
+    desc: 'Hızlı yanıt hattı'
   },
   {
     icon: MapPin,
-    title: 'Adres',
+    title: 'Merkez Ofis',
     value: 'Malatya, Türkiye',
     href: 'https://maps.google.com/?q=Malatya,Turkey',
     color: 'amber',
     gradient: 'from-amber-500 to-orange-600',
-    desc: 'Ofisimizi ziyaret edin'
+    desc: 'Malatya\'nın her noktasından ulaşım'
   },
 ]
 
@@ -54,11 +55,29 @@ export default function ContactPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="gradient-hero pt-36 pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px]" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-600/15 rounded-full blur-[80px]" />
+      <section className="relative pt-40 pb-28 overflow-hidden bg-[#0F172A]">
+        {/* Animated Background Image */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <div className="w-full h-full relative animate-zoom-bg">
+            <Image
+              src="/images/pages/contact_bg.png"
+              alt="İletişim Arka Plan"
+              fill
+              className="object-cover object-center"
+              priority
+              quality={90}
+            />
+          </div>
+          {/* Gradients */}
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-900" />
         </div>
+
+        {/* Ambient Orbs */}
+        <div className="absolute inset-0 pointer-events-none z-0 mix-blend-screen opacity-60">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px]" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-600/20 rounded-full blur-[80px]" />
+        </div>
+
         <div className="container mx-auto px-6 max-w-7xl relative z-10 text-center">
           <h1 className="text-5xl md:text-7xl font-black text-white mb-4">
             Bize{' '}
@@ -67,7 +86,7 @@ export default function ContactPage() {
               Ulaşın
             </span>
           </h1>
-          <p className="text-white/60 text-xl font-medium">
+          <p className="text-white/80 text-xl font-medium">
             Hayalinizdeki tur için uzman ekibimiz hazır.
           </p>
         </div>

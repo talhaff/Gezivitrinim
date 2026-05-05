@@ -87,7 +87,7 @@ export default function Hero() {
             >
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               <span className="text-white/90 text-xs font-bold uppercase tracking-[0.2em]">
-                Malatya Çıkışlı · Yaz 2025 Turları Açık
+                TÜRSAB NO: 6882
               </span>
             </motion.div>
 
@@ -132,7 +132,7 @@ export default function Hero() {
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <a
-                href="https://wa.me/905000000000?text=Merhaba, tur hakkında bilgi almak istiyorum."
+                href="https://wa.me/905397106544?text=Merhaba, tur hakkında bilgi almak istiyorum."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-whatsapp text-base md:text-lg px-8 md:px-10 py-4 md:py-5 rounded-2xl"

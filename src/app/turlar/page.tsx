@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Suspense } from 'react'
 import { Metadata } from 'next'
 import { client } from '@/sanity/lib/client'
@@ -55,10 +56,27 @@ export default async function ToursPage({ searchParams }: ToursPageProps) {
       <Navbar />
 
       {/* Page Hero */}
-      <section className="gradient-hero pt-36 pb-16 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
+      <section className="relative pt-40 pb-20 overflow-hidden bg-[#0F172A]">
+        {/* Animated Background Image */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <div className="w-full h-full relative animate-zoom-bg">
+            <Image
+              src="/images/pages/tours_bg.png"
+              alt="Turlarımız Arka Plan"
+              fill
+              className="object-cover object-center"
+              priority
+              quality={90}
+            />
+          </div>
+          {/* Gradients */}
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-900" />
+        </div>
+
+        {/* Ambient Orbs */}
+        <div className="absolute inset-0 pointer-events-none z-0 mix-blend-screen opacity-60">
           <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px]" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-600/15 rounded-full blur-[80px]" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-600/20 rounded-full blur-[80px]" />
         </div>
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="max-w-2xl">

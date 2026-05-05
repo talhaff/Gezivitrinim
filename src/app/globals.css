@@ -221,6 +221,16 @@
     to   { opacity: 1; }
   }
 
+  @keyframes zoomBg {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+  }
+
+  .animate-zoom-bg {
+    animation: zoomBg 30s ease-in-out infinite;
+    transform-origin: center center;
+  }
+
   /* --- SCROLLBAR --- */
   .scrollbar-hide::-webkit-scrollbar { display: none; }
   .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
