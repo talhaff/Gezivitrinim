@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌍 Gezi Vitrinim - Modern Tur ve Seyahat Portalı
 
-## Getting Started
+Gezi Vitrinim, modern gezginler için tasarlanmış, yüksek performanslı ve premium görsel tasarıma sahip bir turizm platformudur. Malatya çıkışlı turlar başta olmak üzere, günübirlik, konaklamalı ve yurt dışı turlarını kullanıcıya en şık şekilde sunar.
 
-First, run the development server:
+![Gezi Vitrinim Banner](https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=1200)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Özellikler
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+-   🚀 **Hızlı ve Modern**: Next.js 15 App Router mimarisi ile ultra hızlı sayfa geçişleri.
+-   💎 **Premium Tasarım**: Framer Motion ile güçlendirilmiş akıcı animasyonlar ve modern glassmorphism UI bileşenleri.
+-   🛠 **Sanity CMS Entegrasyonu**: Turlar, fiyatlar ve içerikler teknik bilgi gerektirmeden kolayca yönetilebilir.
+-   📱 **Mobil Öncelikli (Mobile-First)**: Tüm cihazlarda mükemmel görünen duyarlı (responsive) tasarım.
+-   💬 **Doğrudan İletişim**: Tek tıkla WhatsApp üzerinden rezervasyon ve bilgi alma imkanı.
+-   🔍 **Akıllı Filtreleme**: Kategori bazlı (Günübirlik, Konaklamalı, Kültür, Yurt Dışı) tur arama.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠 Teknoloji Yığını
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+-   **Framework**: [Next.js 15](https://nextjs.org/)
+-   **İçerik Yönetimi (CMS)**: [Sanity.io](https://www.sanity.io/)
+-   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+-   **Animasyonlar**: [Framer Motion](https://www.framer.com/motion/)
+-   **İkonlar**: [Lucide React](https://lucide.dev/)
+-   **Dil**: [TypeScript](https://www.typescriptlang.org/)
 
-## Learn More
+## 🚀 Kurulum
 
-To learn more about Next.js, take a look at the following resources:
+Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları takip edin:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1.  **Depoyu klonlayın:**
+    ```bash
+    git clone https://github.com/talhaff/Gezivitrinim.git
+    cd Gezivitrinim
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2.  **Bağımlılıkları yükleyin:**
+    ```bash
+    npm install
+    ```
 
-## Deploy on Vercel
+3.  **Çevresel değişkenleri ayarlayın:**
+    `.env.local` dosyası oluşturun ve Sanity proje bilgilerinizi ekleyin:
+    ```env
+    NEXT_PUBLIC_SANITY_PROJECT_ID=proje_id_niz
+    NEXT_PUBLIC_SANITY_DATASET=production
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4.  **Geliştirme sunucusunu başlatın:**
+    ```bash
+    npm run dev
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Tarayıcınızda `http://localhost:3000` adresine giderek projeyi görüntüleyebilirsiniz.
+
+## 📁 Dosya Yapısı
+
+-   `src/app`: Next.js sayfa yönlendirmeleri ve layout'lar.
+-   `src/components`: Tekrar kullanılabilir UI bileşenleri (TourCard, Navbar, Footer vb.).
+-   `src/sanity`: Sanity CMS şemaları ve bağlantı ayarları.
+-   `src/types`: TypeScript tip tanımlamaları.
+-   `public`: Statik varlıklar (resimler, SVG'ler).
+
+## 📄 Lisans
+
+Bu proje kişisel kullanım ve geliştirme amacıyla oluşturulmuştur.
+
+---
+
+**Gezivitrinim** - *Hayallerinizdeki tatili keşfedin.*
