@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Compass, Plane, Star, MapPin, Users, Award } from 'lucide-react'
 
 const stats = [
@@ -19,13 +20,33 @@ const highlights = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden gradient-hero noise">
+    <section className="relative min-h-screen flex flex-col overflow-hidden bg-[#0F172A]">
 
-      {/* Animated Mesh Background Orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* Animated Background Image */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <motion.div
+          animate={{ scale: [1, 1.08, 1] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+          className="w-full h-full relative"
+        >
+          <Image
+            src="/images/tours/kapadokya.png"
+            alt="Kapadokya Turu"
+            fill
+            className="object-cover object-center"
+            priority
+            quality={90}
+          />
+        </motion.div>
+        {/* Gradients for text readability & styling */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-80" />
+      </div>
+
+      {/* Animated Mesh Background Orbs (for subtle color pops) */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 mix-blend-screen">
         <div className="absolute top-[-20%] right-[-10%] w-[700px] h-[700px] bg-blue-600/20 rounded-full blur-[120px] animate-pulse-slow" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-purple-600/15 rounded-full blur-[100px] animate-float-slow" />
-        <div className="absolute top-[40%] left-[30%] w-[300px] h-[300px] bg-cyan-500/10 rounded-full blur-[80px] animate-float" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-amber-500/15 rounded-full blur-[100px] animate-float-slow" />
       </div>
 
       {/* Floating highlight cards (desktop decoration) */}

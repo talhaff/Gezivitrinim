@@ -1,7 +1,7 @@
 'use client'
 
 import { MessageCircle } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
 interface WhatsAppButtonProps {
@@ -13,14 +13,14 @@ interface WhatsAppButtonProps {
 
 export default function WhatsAppButton({ 
   phoneNumber, 
-  message = "Merhaba, bilgi almak istiyorum.", 
+  message = "Merhaba, turlarınız hakkında bilgi almak istiyorum.", 
   className,
   tourName 
 }: WhatsAppButtonProps) {
   
   const handleWhatsAppClick = () => {
     const finalMessage = tourName 
-      ? `Merhaba, "${tourName}" turu hakkında bilgi almak istiyorum.`
+      ? `Merhaba, "${tourName}" turu hakkında detaylı bilgi alabilir miyim?`
       : message
     
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(finalMessage)}`
@@ -28,15 +28,22 @@ export default function WhatsAppButton({
   }
 
   return (
-    <Button
+    <motion.button
+      initial={{ scale: 0, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      whileHover={{ scale: 1.05, y: -2 }}
+      whileTap={{ scale: 0.95 }}
       onClick={handleWhatsAppClick}
       className={cn(
-        "fixed bottom-6 right-6 z-50 rounded-full h-14 px-6 shadow-2xl transition-all hover:scale-110 bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center gap-2 font-bold",
+        "fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 rounded-full h-14 md:h-16 px-5 md:px-6 shadow-[0_10px_40px_-10px_rgba(37,211,102,0.8)] bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white flex items-center gap-3 font-black text-sm md:text-base border border-white/20 transition-shadow",
         className
       )}
     >
-      <MessageCircle className="w-6 h-6 fill-current" />
-      <span>WhatsApp'tan Bilgi Al</span>
-    </Button>
+      <div className="relative flex items-center justify-center">
+        <span className="absolute inline-flex h-[150%] w-[150%] rounded-full bg-white opacity-20 animate-ping"></span>
+        <MessageCircle className="w-6 h-6 md:w-7 md:h-7 relative z-10 fill-current" />
+      </div>
+      <span className="hidden sm:inline">WhatsApp Destek</span>
+    </motion.button>
   )
 }

@@ -8,21 +8,44 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfa
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://gezivitrinim.com"),
-  title: "Gezi Vitrinim | Sınırları Aşan Deneyimler",
-  description: "Premium seyahat ve tur deneyimi. Türkiye ve yurt dışı turlarımızla unutulmaz anılar yaratın.",
-  keywords: ["tur", "seyahat", "tatil", "turizm", "tur rehberi", "kapadokya", "bodrum", "antalya"],
+  title: {
+    template: "%s | Gezi Vitrinim",
+    default: "Gezi Vitrinim | Malatya Çıkışlı Premium Turlar",
+  },
+  description: "Malatya çıkışlı günübirlik, konaklamalı ve yurt dışı premium turlar. Gezi Vitrinim ile güvenilir, konforlu ve unutulmaz seyahat deneyimleri yaşayın.",
+  keywords: [
+    "malatya çıkışlı turlar",
+    "gezi vitrinim",
+    "malatya tur acentesi",
+    "kapadokya turu",
+    "karadeniz turu",
+    "kültür turları",
+    "günübirlik turlar malatya",
+    "yurtdışı turları",
+  ],
+  authors: [{ name: "Gezi Vitrinim" }],
+  creator: "Gezi Vitrinim",
+  publisher: "Gezi Vitrinim",
   openGraph: {
     type: "website",
     locale: "tr_TR",
     url: "https://gezivitrinim.com",
     siteName: "Gezi Vitrinim",
-    title: "Gezi Vitrinim | Sınırları Aşan Deneyimler",
-    description: "Premium seyahat ve tur deneyimi",
+    title: "Gezi Vitrinim | Malatya Çıkışlı Premium Turlar",
+    description: "Malatya çıkışlı günübirlik, konaklamalı ve yurt dışı premium turlar. Unutulmaz seyahat deneyimleri.",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Gezi Vitrinim",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gezi Vitrinim",
-    description: "Sınırları Aşan Deneyimler",
+    title: "Gezi Vitrinim | Malatya Çıkışlı Premium Turlar",
+    description: "Malatya çıkışlı günübirlik, konaklamalı ve yurt dışı premium turlar. Unutulmaz seyahat deneyimleri.",
   },
   robots: {
     index: true,
