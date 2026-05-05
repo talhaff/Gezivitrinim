@@ -60,12 +60,14 @@ export default function Navbar() {
         >
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group flex-shrink-0">
-            <div className="relative w-12 h-12 rounded-2xl overflow-hidden shadow-lg border border-white/20 group-hover:scale-105 transition-transform duration-500">
+            <div className="relative w-14 h-14 rounded-2xl overflow-hidden shadow-sm group-hover:scale-105 transition-transform duration-500 bg-white">
               <Image 
                 src="/images/logo_01.jpg" 
                 alt="Gezi Vitrinim Logo" 
                 fill 
                 sizes="48px"
+                priority
+                quality={100}
                 className="object-cover"
               />
             </div>

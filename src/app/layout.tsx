@@ -54,6 +54,10 @@ export const metadata: Metadata = {
     "max-snippet": -1,
     "max-video-preview": -1,
   },
+  icons: {
+    icon: '/images/logo_01.jpg',
+    apple: '/images/logo_01.jpg',
+  },
 };
 
 export default function RootLayout({

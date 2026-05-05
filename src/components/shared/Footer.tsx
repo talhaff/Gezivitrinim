@@ -39,12 +39,13 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1 space-y-6">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-12 h-12 rounded-2xl overflow-hidden shadow-lg border border-white/10 group-hover:scale-105 transition-transform duration-500">
+              <div className="relative w-14 h-14 rounded-2xl overflow-hidden shadow-sm group-hover:scale-105 transition-transform duration-500 bg-white">
                 <Image 
                   src="/images/logo_01.jpg" 
                   alt="Gezi Vitrinim Logo" 
                   fill 
                   sizes="48px"
+                  quality={100}
                   className="object-cover"
                 />
               </div>
